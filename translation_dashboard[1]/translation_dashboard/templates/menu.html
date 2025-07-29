@@ -1,0 +1,90 @@
+<!-- templates/menu.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translation Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f2f2f2;
+        }
+
+        .top-bar {
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .top-bar a {
+            text-decoration: none;
+            font-size: 1rem;
+            color: red;
+            font-weight: bold;
+        }
+
+        .top-bar button {
+            font-size: 1.2rem;
+            padding: 6px 10px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        .menu-container {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .menu-button {
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .menu-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logout + Dark Mode Toggle -->
+    <div class="top-bar">
+        <a href="/logout">🚪 Logout</a>
+    </div>
+
+    <h1>🌐 Translation Dashboard</h1>
+    <p>Select a translation mode:</p>
+
+    <div class="menu-container">
+        <a href="/text"><button class="menu-button">📝 Text</button></a>
+        <a href="/image"><button class="menu-button">🖼️ Image</button></a>
+        <a href="/document"><button class="menu-button">📄 Document</button></a>
+    </div>
+
+    <script src="/static/script.js"></script>
+    <div style="position: fixed; left:0; bottom: 0; width: 100%; background-color: #222; color: #fff; padding: 10px 0; z-index: 1000;">
+        <marquee behavior="scroll" direction="left" scrollamount="5" style="font-weight: bold;">
+            💬 This Translation Dashboard is a Final Year Project — providing real-time translation for text, images, and documents giving a wonderful experience for the users to translate. This will not be the end of it we can make updates for future references.
+        </marquee>
+    </div>
+    
+</body>
+</html>

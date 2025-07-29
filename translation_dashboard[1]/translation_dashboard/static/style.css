@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e7f0f7;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: orange;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+#historyList {
+    list-style-type: none;
+    max-width: 700px;
+    margin: 10px auto;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+.left-section, .right-section {
+    width: 45%;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background: #f9f9f9;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#translatedText {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    min-height: 50px;
+}
+
+.translator-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .translator-section {
+    width: 48%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+  }
+  
+  textarea,
+  .output-box {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: white;
+    resize: vertical;
+  }
+  
+  .button-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+
+
+
+  button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  select, button {
+    margin-top: 10px;
+    display: block;
+    padding: 8px;
+    font-size: 14px;
+}
+
+  button:hover {
+    background-color: #0056b3;
+  }
+  

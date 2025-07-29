@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translation Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <a href="/menu">🔙 Back to Menu</a>
+
+    <h1>🌍 Language Translator</h1>
+    
+    <div class="translator-wrapper">
+        <!-- LEFT SIDE: Input Area -->
+        <div class="translator-section">
+            <h2>Enter Text</h2>
+            <form id="translateForm">
+                <label for="source">From:</label>
+                <select id="source" name="source">
+                    <option value="auto">Auto-Detect</option>
+                    {% for lang in languages %}
+                        <option value="{{ languages[lang] }}">{{ lang }}</option>
+                    {% endfor %}
+                </select>
+                <h3 id="detected_lang">Detected Language: Auto</h3>
+                <textarea id="inputText" placeholder="Type your text here..."></textarea>
+                <p id="correctedText" style="color: #888; font-style: italic;"></p>
+
+                <div class="button-row">
+                    <button type="button" id="recordBtn">🎙</button>
+                    <button type="button" id="listenInputBtn">🔊 Listen</button>
+                    <!--  <button type="submit">Translate</button>  -->
+                </div>
+            </form>
+        </div>
+        <button id="swapBtn">🔁 Swap</button>
+
+        <!-- RIGHT SIDE: Output Area -->
+        <div class="translator-section">
+            <h2>Translated Text</h2>
+            <label for="target">To:</label>
+            <select id="target" name="target">
+                {% for lang in languages %}
+                    <option value="{{ languages[lang] }}">{{ lang }}</option>
+                {% endfor %}
+            </select>
+            <div id="translatedText" class="output-box"></div>
+            <div class="button-row">
+                <button type="button" id="copyBtn" style="display: none;" >📋 Copy</button>
+                <button id="playAudioBtn" style="display: none;">🔊 Listen</button>
+            </div>
+            <audio id="audioPlayer" controls style="display: none;"></audio>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+    <div style="position: fixed; left:0; bottom: 0; width: 100%; background-color: #222; color: #fff; padding: 10px 0; z-index: 1000;">
+        <marquee behavior="scroll" direction="left" scrollamount="5" style="font-weight: bold;">
+            💬 This Translation Dashboard is a Final Year Project — providing real-time translation for text, images, and documents giving a wonderful experience for the users to translate. This will not be the end of it we can make updates for future references.
+        </marquee>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f1f4f9;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: inline-block;
+            text-align: left;
+        }
+
+        label, select, input {
+            display: block;
+            margin: 12px 0;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 30px;
+            text-align: left;
+            display: inline-block;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 600px;
+            max-width: 90%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .menu-btn {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            padding: 8px 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .menu-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="{{ url_for('menu') }}" class="menu-btn">← Menu</a>
+
+    <h1>🖼️ Image Translator</h1>
+
+    <form method="POST" action="/image-translate" enctype="multipart/form-data">
+        <label>Select an image:</label>
+        <input type="file" name="image" accept="image/*" required>
+
+        <label>Translate to:</label>
+        <select name="target" required>
+            {% for lang in languages %}
+                <option value="{{ languages[lang] }}">{{ lang }}</option>
+            {% endfor %}
+        </select>
+
+        <br>
+        <button type="submit">Translate Image</button>
+    </form><br>
+
+    {% if extracted_text %}
+    <div class="result">
+        <h3>📝 Extracted Text:</h3>
+        <p>{{ extracted_text }}</p>
+    </div>
+    {% endif %}
+
+    {% if translation %}
+    <div class="result">
+        <h3>🌐 Translated Text:</h3>
+        <p>{{ translation }}</p>
+    </div>
+    {% endif %}
+
+    {% if error %}
+    <p style="color: red; font-weight: bold;">{{ error }}</p>
+    {% endif %}
+    <div style="position: fixed;left:0; bottom: 0; width: 100%; background-color: #222; color: #fff; padding: 10px 0; z-index: 1000;">
+        <marquee behavior="scroll" direction="left" scrollamount="5" style="font-weight: bold;">
+            💬 This Translation Dashboard is a Final Year Project — providing real-time translation for text, images, and documents giving a wonderful experience for the users to translate. This will not be the end of it we can make updates for future references.
+        </marquee>
+    </div>
+    
+</body>
+</html>

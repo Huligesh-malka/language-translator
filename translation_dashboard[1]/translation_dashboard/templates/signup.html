@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .form-container {
+            background-color: white;
+            display: inline-block;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 12px 0;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .menu-btn {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .menu-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="form-container">
+        <h2>🔐 Create Account</h2>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Enter username" required>
+            <input type="password" name="password" placeholder="Enter password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p style="margin-top: 15px;">Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    </div>
+    <div style="position: fixed; bottom: 0; left:0; width: 100%; background-color: #222; color: #fff; padding: 10px 0; z-index: 1000;">
+        <marquee behavior="scroll" direction="left" scrollamount="5" style="font-weight: bold;">
+            💬 This Translation Dashboard is a Final Year Project — providing real-time translation for text, images, and documents giving a wonderful experience for the users to translate. This will not be the end of it we can make updates for future references.
+        </marquee>
+    </div>
+    
+</body>
+</html>
